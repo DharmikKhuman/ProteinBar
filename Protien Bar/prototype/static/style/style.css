@@ -1,0 +1,139 @@
+.main-container{
+    padding: 0%;
+    margin: 0%;
+}
+
+.card img {
+    height: 200px;
+    width: 100%; /* Ensure the image spans the card width */
+    object-fit: fill;
+    border-radius: 8px;
+    background-color: #f8f8f8; /* Optional, for a clean background */
+}
+.card-body p {
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+.text-center li {
+    list-style: none;
+}
+
+
+/* Navigation Bar */
+.navbar-custom {
+    background: linear-gradient(to right, #FF8C00, #FFD700);
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-custom .nav-custom {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    margin: 0 10px;
+    text-transform: uppercase;
+}
+
+.navbar-custom .nav-custom:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+.navbar-custom .cart-link {
+    background-color: white;
+    color: #FF8C00;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+    text-transform: uppercase;
+}
+
+.navbar-custom .cart-link:hover {
+    background-color: #FFD700;
+    color: white;
+}
+
+/* Main Container */
+.main-container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.main-container h1, .main-container h2, .main-container p {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+.main-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.main-container p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+/* Main Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #FF8C00, #FFD700);
+    padding: 50px 20px;
+    color: white;
+    text-align: center;
+    width: 100vw; /* Ensure it spans the full width of the viewport */
+    height:auto;
+    margin: 0; /* Remove any default margins */
+    position: relative; /* Ensure it spans the page edge-to-edge */
+    left: 50%; /* Align the section */
+    transform: translateX(-50%); /* Center the content */
+    box-sizing: border-box; /* Prevent padding from affecting width */
+}
+
+.hero-heading {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-subheading {
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.btn-customize {
+    background-color: #FF8C00;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-customize:hover {
+    background-color: #FFD700;
+}

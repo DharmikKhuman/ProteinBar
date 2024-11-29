@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <!-- Customize Section -->
+    <h2 class="text-center my-4">Customize Your Protein Bar</h2>
+    {% if success_message %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ success_message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    <form method="post">
+        <div class="form-group">
+            <label for="flour">Choose Flour Type:</label>
+            <select class="form-control" id="flour" name="flour">
+                <option>Almond Flour</option>
+                <option>Coconut Flour</option>
+                <option>Oat Flour</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="protein">Protein Amount (g):</label>
+            <input type="number" class="form-control" id="protein" name="protein" required>
+        </div>
+        <div class="form-group">
+            <label for="flavor">Choose Flavor:</label>
+            <select class="form-control" id="flavor" name="flavor">
+                <option>Chocolate</option>
+                <option>Vanilla</option>
+                <option>Peanut Butter</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="sweetener">Choose Sweetener:</label>
+            <select class="form-control" id="sweetener" name="sweetener">
+                <option>Stevia</option>
+                <option>Honey</option>
+                <option>Maple Syrup</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Add to Cart</button>
+    </form>
+
+    <!-- Ready-Made Products Section -->
+    <h2 class="text-center my-4">Ready-Made Protein Bars</h2>
+    <div class="row">
+        {% for bar in protein_bars %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ url_for('static', filename='images/' + bar.image) }}" class="card-img-top" alt="{{ bar.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ bar.name }}</h5>
+                <p><strong>Flavor:</strong> {{ bar.flavor }}</p>
+                <p><strong>Protein:</strong> {{ bar.protein }}</p>
+                <p><strong>Carbs:</strong> {{ bar.carbs }}</p>
+                <p><strong>Fats:</strong> {{ bar.fats }}</p>
+                <p><strong>Price:</strong> {{ bar.price }}</p>
+                <p><strong>Ingredients:</strong> {{ bar.ingredients }}</p>
+                <form method="POST" action="{{ url_for('add_to_cart') }}">
+                    <input type="hidden" name="name" value="{{ bar.name }}">
+                    <input type="hidden" name="flavor" value="{{ bar.flavor }}">
+                    <input type="hidden" name="protein" value="{{ bar.protein }}">
+                    <input type="hidden" name="carbs" value="{{ bar.carbs }}">
+                    <input type="hidden" name="fats" value="{{ bar.fats }}">
+                    <input type="hidden" name="price" value="{{ bar.price }}">
+                    <input type="hidden" name="ingredients" value="{{ bar.ingredients }}">
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </form>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
